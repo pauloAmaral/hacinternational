@@ -1,0 +1,4 @@
+.idea/
+static_prod/
+db.sqlite3
+__pycache__/

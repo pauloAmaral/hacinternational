@@ -1,0 +1,130 @@
+@import "variables";
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+  color: $font-color-primary;
+}
+
+header {
+  .navbar-light {
+    padding-bottom: 0;
+
+    .navbar-brand {
+      text-align: center;
+    }
+
+    .navbar-collapse {
+      .navbar-nav {
+        .nav-item {
+          margin-right: 1rem;
+          color: $menu-item-color;
+          font-size: 14px;
+          text-transform: uppercase;
+          letter-spacing: 4px;
+          line-height: 17px;
+          transition: 0.3s;
+
+          .nav-link {
+            color: $menu-item-color;
+
+            &.btn-primary {
+              padding-right: 30px;
+              padding-left: 30px;
+            }
+
+            &:hover {
+              color: $primary;
+            }
+          }
+
+          &.active {
+            .nav-link {
+              color: $primary;
+              border-bottom: 5px solid;
+            }
+          }
+        }
+      }
+    }
+
+    .btn-primary {
+      font: bold 14px 'Proxima Nova Rg', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      padding: 10px 10px;
+      border-radius: .25rem;
+    }
+
+    .toggle-button {
+      font-size: 36px;
+    }
+  }
+}
+
+/* ------ buttons ------ */
+.btn-primary {
+  background-color: $primary;
+  color: white !important;
+  font-weight: 400;
+  border: none;
+  /*border-radius: 25px;*/
+  overflow: hidden;
+  opacity: 0.9;
+  -webkit-transition: 0.6s all;
+  transition: 0.6s all;
+
+  font: bold 14px 'Proxima Nova Rg', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  /*padding: 10px 10px;*/
+  border-radius: .25rem;
+
+  &:hover {
+    background-color: $primary-light;
+  }
+
+  &:active, &:focus, &:not(:disabled):not(.disabled):active {
+    background-color: $primary-dark;
+    box-shadow: none;
+  }
+}
+/* ------ buttons ------ */
+
+ul.icon-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li > i {
+    margin-right: 5px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 50%;
+    color: $primary;
+    border: 1px solid $icon-list-border;
+    text-align: center;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1200px) {
+  header{
+    .navbar-light {
+      .navbar-collapse {
+        .navbar-nav {
+          .nav-item {
+            &.active {
+              .nav-link {
+                border-bottom: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

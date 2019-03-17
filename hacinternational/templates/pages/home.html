@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load pipeline %}
+
+{% block extra-stylesheet %}
+  {% stylesheet 'pages-home' %}
+{% endblock %}
+
+{% block content %}
+<div id="home-hero" class="jumbotron jumbotron-fluid" style="background-image: url({% static 'images/home_hero.jpg' %});">
+  <div class="container-fluid" style="padding-left: 10%;padding-top: 5%;">
+    <div class="row">
+      <div class="col-12">
+        <h1>Hope for African Communities<h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <p class="lead">Empowering poor African communities and unlocking their full potential.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div id="home-commitment" class="row home-section">
+    <div class="col-12 text-center section-description">
+      <h1 class="title">Our commitment</h1>
+      <p class="subtitle">Through the provision of financial, commercial and tangible products our mission is to restore meaning and happiness to the lives of the less fortunate, widowed, disabled and orphans in order to inspire hope through the return of their dignity and an enhanced exposure to otherwise lacking opportunity.</p>
+    </div>
+
+    <div class="col-lg-4 text-center">
+      <div class="commitment-item">
+        <div class="commitment-img">
+          <img class="rounded" src="{% static 'images/commitment_communities.webp' %}" alt="">
+        </div>
+        <div class="commitment-content">
+          <h3 class="commitment-title">The communities</h3>
+          <p>Rural communities find it harder to cope with the perpetual strain of lack of finance.</p>
+          <p>By helping these communities we aim to empower them to achieve self financial sustainance through various micro project schemes.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 text-center">
+      <div class="commitment-item">
+        <div class="commitment-img">
+          <img class="rounded" src="{% static 'images/commitment_projects.webp' %}" alt="">
+        </div>
+        <div class="commitment-content">
+          <h3 class="commitment-title">Our projects</h3>
+          <p>Hope For African Communities exists to assist in income generating activities for widows, educational support and health programmes for vulnerable orphans, help as much as we can the disabled and provide high school educational for vulnerable talented youth.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 text-center">
+      <div class="commitment-item">
+        <div class="commitment-img">
+          <img class="rounded" src="{% static 'images/commitment_benificiaries.webp' %}" alt="">
+        </div>
+        <div class="commitment-content">
+          <h3 class="commitment-title">The beneficiaries</h3>
+          <p>We particularly aim to help the groups that are easily overlooked by more conventional government aid because of society stigmas.</p>
+          <p>These are Widows, the disabled, orphans and the elderly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="home-events" class="row home-section">
+    <div class="col-12 text-center section-description">
+      <h1 class="title">Upcoming events</h1>
+    </div>
+    <div class="col-lg-6">
+      <div class="events-item d-flex flex-wrap justify-content-between">
+        <div class="events-img">
+          <img class="rounded" src="{% static 'images/event_drinks.webp' %}" alt="">
+        </div>
+        <div class="events-content">
+          <h3 class="events-title">Fundraising Drinks reception</h3>
+          <ul class="icon-list">
+            <li><i class="fas fa-clock"></i>March 10 2019 - March 12 2019</li>
+            <li><i class="fas fa-map-marker-alt"></i>The Shard</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="events-item d-flex flex-wrap justify-content-between">
+        <div class="events-img">
+          <img class="rounded" src="{% static 'images/event_ball.webp' %}" alt="">
+        </div>
+        <div class="events-content">
+          <h3 class="events-title">Hope for African Communities Charity ball</h3>
+          <ul class="icon-list">
+            <li><i class="fas fa-clock"></i>April 3 2019</li>
+            <li><i class="fas fa-map-marker-alt"></i>The Shard</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="events-item d-flex flex-wrap justify-content-between">
+        <div class="events-img">
+          <img class="rounded" src="{% static 'images/event_farming.webp' %}" alt="">
+        </div>
+        <div class="events-content">
+          <h3 class="events-title">Small scale beneficial farming forum event</h3>
+          <ul class="icon-list">
+            <li><i class="fas fa-clock"></i>April 27 2019</li>
+            <li><i class="fas fa-map-marker-alt"></i>Hyde Park</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

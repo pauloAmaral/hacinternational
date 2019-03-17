@@ -1,0 +1,24 @@
+shell-dev:
+  build: .
+  dockerfile: Dockerfile
+  volumes:
+    - .:/hacinternational
+  environment:
+    SECRET_KEY: 'dev_secret_key'
+    DEBUG: 'true'
+  ports:
+    - "8001:8001"
+  command: bash
+
+
+server-dev:
+  build: .
+  dockerfile: Dockerfile
+  volumes:
+    - .:/hacinternational
+  environment:
+    SECRET_KEY: 'dev_secret_key'
+    DEBUG: 'true'
+  ports:
+    - "8001:8001"
+  command: /home/appuser/.pyenv/shims/python manage.py runserver 0:8001
