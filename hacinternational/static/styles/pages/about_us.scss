@@ -1,0 +1,23 @@
+@import "../variables";
+
+#main {
+  margin-bottom: 3rem;
+}
+
+#help {
+  color: white;
+}
+
+#secondary {
+  margin-top: 3rem;
+
+  .card {
+    border: none;
+
+    i {
+      font-size: 6rem;
+      color: $primary-light;
+      padding-bottom: 1rem;
+    }
+  }
+}

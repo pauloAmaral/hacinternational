@@ -8,6 +8,30 @@ body {
   color: $font-color-primary;
 }
 
+.page-title {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+
+  h1 {
+    display: inline-block;
+    margin-top: .5rem;
+  }
+
+  hr {
+    margin-top: unset !important;
+    margin-bottom: unset !important;
+  }
+}
+
+.parallax-section {
+  background: rgba(0,0,0,0.4) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  min-height: 400px;
+}
+
 header {
   .navbar-light {
     padding-bottom: 0;

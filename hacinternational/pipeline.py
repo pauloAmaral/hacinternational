@@ -42,6 +42,12 @@ def get_assets_pipeline(is_debug=False):
                 ),
                 'output_filename': 'home.css',
             },
+            'pages-about-us': {
+                'source_filenames': (
+                    'styles/pages/about_us.scss',
+                ),
+                'output_filename': 'about_us.css',
+            },
         },
         'COMPILERS': (
             'pipeline.compilers.sass.SASSCompiler',

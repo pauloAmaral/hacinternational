@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load pipeline %}
+
+{% block extra-stylesheet %}
+  {% stylesheet 'pages-about-us' %}
+{% endblock %}
+
+{% block content %}
+<div id="main" class="container">
+  {% include 'partials/page_title.html' with page_title='About Us' %}
+
+  <div class="row">
+    <div class="col-lg-6 d-flex align-items-center">
+      <p class="lead">Hope for African Communities (HAC) is a charity which seeks to empower poor African communities by availing them with opportunities to better themselves. We aim to rebuild devastated and helpless lives by providing resources and programmes to help those affected to be self sustainable. Our emphasis is on orphans and widows assisting on income generation and provide educational opportunities for orphans</p>
+    </div>
+    <div class="col-md-6 mx-auto d-block">
+      <img src="{% static 'images/about_us.jpg' %}" class="img-fluid" alt="About us">
+    </div>
+  </div>
+</div>
+
+<div id="help" class="container-fluid">
+  <div class="parallax-section d-flex align-items-center justify-content-center" style="background-image: url({% static 'images/about_us_help.png' %});">
+    <div class="row text-center">
+      <div class="col-10 offset-1">
+        <h4>Help us to aid those in need</h4>
+        <p class="lead">We welcome all kinds of donations. We have a comprehensive secure donations system. Please visit our donations page via the button below.</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Donate Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="secondary" class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card text-center">
+        <i class="fas fa-hands-helping"></i>
+        <h5 class="card-title">Mission & Vision</h5>
+        <div class="card-body">
+          <p class="card-text">Our Mission is to identify those who require our help most by working with local community leaders in the recipient areas of Africa. We will then Identify the and assess the best form of aid we can dispense. As we are still only operational in Zimbabwe our vision is to expand into the rest of Africa by identifying and working with like minded strategic partners.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card text-center">
+        <i class="fas fa-history"></i>
+        <h5 class="card-title">History</h5>
+        <div class="card-body">
+          <p class="card-text">The plight of those who lose a partner or a parent mostly gets scant attention in some African societies where either widows or orphans gets overlooked by both state and society. The ability to look after themselves is however not diminished but the opportunities are very limited. Visits to Africa exposed the lack of support for the said groups. Hope for African communities was founded to help real people on the ground by presenting them with opportunities to better themselves.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card text-center">
+        <i class="fas fa-people-carry"></i>
+        <h5 class="card-title">Operational Policy</h5>
+        <div class="card-body">
+          <p class="card-text">Transparency is the key driver in what Hope for African Communities stands for. Following set guidelines by both donor and recipient governments helps us dispense aid to the most vulnerable in an equitable way. HAC is governed by a board of trustees with a wealth of varied experience in international development, charity finance and commerce. The board meets quarterly and agrees strategy ensuring financial accountability and best practice in governance.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

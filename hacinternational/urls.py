@@ -20,7 +20,9 @@ from django.contrib import admin, sitemaps
 from django.contrib.sitemaps.views import sitemap
 from django.urls import path, reverse
 
+from hacinternational.apps.about.views import AboutUsView
 from hacinternational.apps.home.views import HomeView
+
 
 
 # class StaticViewSitemap(sitemaps.Sitemap):
@@ -44,5 +46,6 @@ urlpatterns = [
     # url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps},
     #     name='django.contrib.sitemaps.views.sitemap'),
 
-    path('', HomeView.as_view(), name='home')
+    path('', HomeView.as_view(), name='home'),
+    path('about/', AboutUsView.as_view(), name='about')
 ]
