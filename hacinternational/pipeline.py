@@ -48,6 +48,12 @@ def get_assets_pipeline(is_debug=False):
                 ),
                 'output_filename': 'about_us.css',
             },
+            'pages-meet-the-team': {
+                'source_filenames': (
+                    'styles/pages/meet_the_team.scss',
+                ),
+                'output_filename': 'meet_the_team.css',
+            },
         },
         'COMPILERS': (
             'pipeline.compilers.sass.SASSCompiler',

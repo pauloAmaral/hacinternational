@@ -3,7 +3,8 @@
 <div class="container">
   <nav id="menu" class="navbar navbar-expand-xl navbar-light">
     <a class="navbar-brand" href="#">
-      <img src="{% static 'images/logo_new.png' %}" alt="Hope For African Communities Logo">
+      {% comment %}<img src="{% static 'images/logo_new.png' %}" alt="Hope For African Communities Logo">{% endcomment %}
+      <img class="img-fluid" src="{% static 'images/logo.svg' %}" alt="Hope For African Communities Logo">
     </a>
     <button class="btn btn-primary btn-md mr-2 ml-auto d-xl-none" type="button">Donate</button>
     <i class="fa fa-bars fa-2x toggle-button d-xl-none"  data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"></i>
@@ -13,8 +14,12 @@
           <a class="nav-link" href="{% url 'home' %}">Home</a>
         </li>
 
-        <li class="nav-item {% if request.resolver_match.url_name == 'about' %}active{% endif %}">
-          <a class="nav-link" href="{% url 'about' %}">About Us</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Us</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item {% if request.resolver_match.url_name == 'who_we_are' %}active{% endif %}" href="{% url 'who_we_are' %}">Who We Are</a>
+            <a class="dropdown-item {% if request.resolver_match.url_name == 'meet_the_team' %}active{% endif %}" href="{% url 'meet_the_team' %}">Meet The Team</a>
+          </div>
         </li>
 
         <li class="nav-item">

@@ -11,6 +11,7 @@ body {
 .page-title {
   padding-top: 1rem;
   padding-bottom: 2rem;
+  color: $font-color-secondary;
 
   h1 {
     display: inline-block;
@@ -21,6 +22,10 @@ body {
     margin-top: unset !important;
     margin-bottom: unset !important;
   }
+}
+
+.sub-heading {
+  color: $font-color-terciary;
 }
 
 .parallax-section {
@@ -38,6 +43,7 @@ header {
 
     .navbar-brand {
       text-align: center;
+      width: 135px;
     }
 
     .navbar-collapse {

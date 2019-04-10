@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load pipeline %}
+
+{% block extra-stylesheet %}
+  {% stylesheet 'pages-meet-the-team' %}
+{% endblock %}
+
+{% block content %}
+<div id="main" class="container">
+  {% include 'partials/page_title.html' with page_title='Meet the Team' %}
+
+  {% comment %}
+  <div class="row mb-3">
+    <div class="col d-flex align-items-center">
+      <p class="lead">As Hope for African Communities, we have started our movement in Zimbabwe.<br>
+      We are already active on the ground involved in distribution of donations we have been sourcing for years. The Zimbabwean team on the ground together with the local government branches have been instrumental in identifying those in dire need. The team works tirelessly and make our fundraising efforts and indeed HAC UK work easier.</p>
+    </div>
+  </div>
+  {% endcomment %}
+
+  <ul class="nav nav-pills mb-5 justify-content-center" id="team-tab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active lead" id="uk-team-tab" data-toggle="pill" href="#uk-team" role="tab" aria-controls="pills-home" aria-selected="true">The UK Team</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link lead" id="zimbabwe-team-tab" data-toggle="pill" href="#zimbabwe-team" role="tab" aria-controls="pills-profile" aria-selected="false">The Zimbabwe Team</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="team-content">
+    <div class="tab-pane fade show active" id="uk-team" role="tabpanel" aria-labelledby="uk-team-tab">
+      <div class="row justify-content-center">
+        <div class="col">
+          <img class="img-fluid rounded mx-auto d-block" src="https://via.placeholder.com/320">
+        </div>
+        <div class="col">
+          <h4 class="sub-heading">Mufaro</h4>
+          <h5>CEO</h5>
+          <p>Currently a Finance and Admin director at intercrest capital, she has over 15 years experience in insurance and finance industry. She holds a Masters degree in Strategic business planning.</p>
+        </div>
+      </div>
+      <hr class="display-4"></hr>
+      <div class="row justify-content-center">
+        <div class="col">
+          <img class="img-fluid rounded mx-auto d-block" src="https://via.placeholder.com/320">
+        </div>
+        <div class="col">
+          <h4 class="sub-heading">Fortune</h4>
+          <h5>CEO</h5>
+          <p>Currently a Finance and Admin director at intercrest capital, she has over 15 years experience in insurance and finance industry. She holds a Masters degree in Strategic business planning.</p>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="zimbabwe-team" role="tabpanel" aria-labelledby="zimbabwe-team-tab">...</div>
+  </div>
+
+  <div class="row">
+  </div>
+</div>
+{% endblock %}
