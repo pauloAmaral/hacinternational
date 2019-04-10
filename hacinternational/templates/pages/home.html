@@ -7,27 +7,31 @@
 {% endblock %}
 
 {% block content %}
-<div id="home-hero" class="jumbotron jumbotron-fluid" style="background-image: url({% static 'images/home_hero.jpg' %});">
-  <div class="container-fluid" style="padding-left: 10%;padding-top: 5%;">
-    <div class="row">
-      <div class="col-12">
-        <h1>Hope for African Communities<h1>
+<div id="home-hero" class="container-fluid pl-0 pr-0 mb-5">
+  <div class="parallax-section d-flex align-items-center justify-content-center" style="background-image: url({% static 'images/home_hero.jpg' %});">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1>Hope for African Communities<h1>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <p class="lead">Empowering poor African communities and unlocking their full potential.</p>
+      <div class="row">
+        <div class="col-12">
+          <p class="lead">Empowering poor African communities and unlocking their full potential.</p>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <a class="btn btn-primary btn-lg" href="{% url 'who_we_are' %}" role="button">Learn more</a>
+      <div class="row">
+        <div class="col-12">
+          <a class="btn btn-primary btn-lg mr-2" href="{% url 'who_we_are' %}" role="button">Learn more</a>
+          <a class="btn btn-primary btn-lg" href="#" role="button">Donate</a>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
 <div class="container">
+  {% comment %}
   <div class="carousel-wraper" style="display: flex; justify-content: center;">
     <div id="featured-posts" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -82,10 +86,11 @@
       </a>
     </div>
   </div>
-  <div id="home-commitment" class="row home-section">
-    <div class="col-12 text-center section-description">
+  {% endcomment %}
+  <section id="home-commitment" class="row home-section">
+    <div class="col-12 section-description">
       <h1 class="title">Our commitment</h1>
-      <p class="subtitle">Through the provision of financial, commercial and tangible products our mission is to restore meaning and happiness to the lives of the less fortunate, widowed, disabled and orphans in order to inspire hope through the return of their dignity and an enhanced exposure to otherwise lacking opportunity.</p>
+      <p class="lead">Through the provision of financial, commercial and tangible products our mission is to restore meaning and happiness to the lives of the less fortunate, widowed, disabled and orphans in order to inspire hope through the return of their dignity and an enhanced exposure to otherwise lacking opportunity.</p>
     </div>
 
     <div class="col-lg-4 text-center">
@@ -125,10 +130,10 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div id="home-events" class="row home-section">
-    <div class="col-12 text-center section-description">
+  <section id="home-events" class="row home-section">
+    <div class="col-12 section-description">
       <h1 class="title">Upcoming events</h1>
     </div>
     <div class="col-lg-6">
@@ -175,6 +180,6 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </div>
 {% endblock %}

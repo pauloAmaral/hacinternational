@@ -14,9 +14,13 @@
   .card {
     border: none;
 
+    .card-title {
+      color: $color-secondary;
+    }
+
     i {
       font-size: 6rem;
-      color: $primary-light;
+      color: $color-secondary;
       padding-bottom: 1rem;
     }
   }

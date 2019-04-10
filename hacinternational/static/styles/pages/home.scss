@@ -4,13 +4,23 @@ $hero-font-color: #FFF;
 $section-subtitle-color: #23262a;
 
 #home-hero {
-  width: 100%;
-  min-height: 422px;
-  position: relative;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  padding: 0;
+  // min-height: 422px;
+  // position: relative;
+  // background-repeat: no-repeat;
+  // background-position: center;
+  // background-size: cover;
+  // padding: 0;
+  // min-height: 422px;
+  // width: 100%;
+  // display: table;
+  // background-attachment: fixed;
+  // background-image: url(/static/images/home_hero.jpg);
+
+  .parallax-section {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
 
   h1 {
     color: $hero-font-color;
@@ -18,34 +28,18 @@ $section-subtitle-color: #23262a;
     line-height: 1.2;
     font-size: 6vmin;
     border-bottom: 5px solid;
-    border-color: $primary;
+    border-color: $color-border;
   }
 
   p {
     color: $hero-font-color;
     display: inline-block;
     font-size: 2.4vmin;
-    font-weight: bold;
   }
 }
 
 
 .home-section {
-  .section-description {
-    margin-bottom: 60px;
-
-    .title {
-      font-size: 43px;
-      text-transform: capitalize;
-      margin-bottom: 30px;
-    }
-
-    .subtitle {
-      color: $section-subtitle-color;
-      font-size: 16px;
-    }
-  }
-
   &#home-commitment{
     .commitment-item {
       margin-bottom: 60px;
@@ -63,7 +57,6 @@ $section-subtitle-color: #23262a;
 
         .commitment-title {
           text-transform: capitalize;
-          font-weight: bold;
         }
       }
     }

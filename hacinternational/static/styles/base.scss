@@ -1,17 +1,21 @@
 @import "variables";
 
 body {
+  color: $color-body;
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
   font-weight: 300;
   letter-spacing: 0.3px;
-  color: $font-color-primary;
+}
+
+hr {
+  border-color: #cea96c;
 }
 
 .page-title {
   padding-top: 1rem;
   padding-bottom: 2rem;
-  color: $font-color-secondary;
+  color: $color-primary;
 
   h1 {
     display: inline-block;
@@ -25,7 +29,20 @@ body {
 }
 
 .sub-heading {
-  color: $font-color-terciary;
+  color: $color-secondary;
+}
+
+section {
+  .section-description {
+    margin-bottom: 2rem;
+
+    .title {
+      color: $color-secondary;
+      text-transform: capitalize;
+      margin-bottom: 30px;
+      border-bottom: 1px solid $color-border;
+    }
+  }
 }
 
 .parallax-section {
@@ -43,7 +60,7 @@ header {
 
     .navbar-brand {
       text-align: center;
-      width: 135px;
+      max-width: 135px;
     }
 
     .navbar-collapse {
@@ -66,14 +83,20 @@ header {
             }
 
             &:hover {
-              color: $primary;
+              color: $color-primary;
             }
           }
 
           &.active {
             .nav-link {
-              color: $primary;
+              color: $color-primary;
               border-bottom: 5px solid;
+            }
+          }
+
+          .dropdown-item {
+            &.active {
+              background-color: $color-primary;
             }
           }
         }
@@ -96,7 +119,7 @@ header {
 
 /* ------ buttons ------ */
 .btn-primary {
-  background-color: $primary;
+  background-color: $color-primary;
   color: white !important;
   font-weight: 400;
   border: none;
@@ -117,7 +140,7 @@ header {
   }
 
   &:active, &:focus, &:not(:disabled):not(.disabled):active {
-    background-color: $primary-dark;
+    background-color: $color-primary;
     box-shadow: none;
   }
 }
@@ -134,7 +157,7 @@ ul.icon-list {
     height: 25px;
     line-height: 25px;
     border-radius: 50%;
-    color: $primary;
+    color: $color-primary;
     border: 1px solid $icon-list-border;
     text-align: center;
     font-size: 15px;
@@ -154,6 +177,16 @@ ul.icon-list {
             }
           }
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  header {
+    .navbar-light {
+      .navbar-brand {
+        max-width: 90px;
       }
     }
   }

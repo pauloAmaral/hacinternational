@@ -10,14 +10,11 @@
 <div id="main" class="container">
   {% include 'partials/page_title.html' with page_title='Meet the Team' %}
 
-  {% comment %}
-  <div class="row mb-3">
-    <div class="col d-flex align-items-center">
-      <p class="lead">As Hope for African Communities, we have started our movement in Zimbabwe.<br>
-      We are already active on the ground involved in distribution of donations we have been sourcing for years. The Zimbabwean team on the ground together with the local government branches have been instrumental in identifying those in dire need. The team works tirelessly and make our fundraising efforts and indeed HAC UK work easier.</p>
+  <section class="row mb-3">
+    <div class="col-12 section-description">
+      <p class="lead">As Hope for African Communities, we have started our movement in Zimbabwe. We are already active on the ground involved in distribution of donations we have been sourcing for years. The Zimbabwean team on the ground together with the local government branches have been instrumental in identifying those in dire need. The team works tirelessly and make our fundraising efforts and indeed HAC UK work easier.</p>
     </div>
-  </div>
-  {% endcomment %}
+  </section>
 
   <ul class="nav nav-pills mb-5 justify-content-center" id="team-tab" role="tablist">
     <li class="nav-item">
@@ -29,29 +26,20 @@
   </ul>
   <div class="tab-content" id="team-content">
     <div class="tab-pane fade show active" id="uk-team" role="tabpanel" aria-labelledby="uk-team-tab">
-      <div class="row justify-content-center">
-        <div class="col">
-          <img class="img-fluid rounded mx-auto d-block" src="https://via.placeholder.com/320">
-        </div>
-        <div class="col">
-          <h4 class="sub-heading">Mufaro</h4>
-          <h5>CEO</h5>
-          <p>Currently a Finance and Admin director at intercrest capital, she has over 15 years experience in insurance and finance industry. She holds a Masters degree in Strategic business planning.</p>
-        </div>
-      </div>
+      {% include 'partials/team_member.html' with image_url='https://via.placeholder.com/320' name='Mufaro' role='CEO' description='Currently a Finance and Admin director at intercrest capital, she has over 15 years experience in insurance and finance industry. She holds a Masters degree in Strategic business planning.' %}
       <hr class="display-4"></hr>
-      <div class="row justify-content-center">
-        <div class="col">
-          <img class="img-fluid rounded mx-auto d-block" src="https://via.placeholder.com/320">
-        </div>
-        <div class="col">
-          <h4 class="sub-heading">Fortune</h4>
-          <h5>CEO</h5>
-          <p>Currently a Finance and Admin director at intercrest capital, she has over 15 years experience in insurance and finance industry. She holds a Masters degree in Strategic business planning.</p>
-        </div>
-      </div>
+      {% include 'partials/team_member.html' with image_url='https://via.placeholder.com/320' name='Fortune' role='CEO' description='Currently a Finance and Admin director at intercrest capital, she has over 15 years experience in insurance and finance industry. She holds a Masters degree in Strategic business planning.' %}
     </div>
-    <div class="tab-pane fade" id="zimbabwe-team" role="tabpanel" aria-labelledby="zimbabwe-team-tab">...</div>
+    <div class="tab-pane fade" id="zimbabwe-team" role="tabpanel" aria-labelledby="zimbabwe-team-tab">
+      {% static 'images/team/nancy.webp' as nancy_url %}
+      {% include 'partials/team_member.html' with image_url=nancy_url name='Ms Nancy Zinyemba' role='Executive Adminstrator' description='The go to person for our Zimbabwean Operation, she is an accomplished PA  with the necessary skills to coodinate the day to day running of HAC Zim branch. A college graduate from Ranch house College she maximises efficiency and productivity.' %}
+      <hr class="display-4"></hr>
+      {% static 'images/team/precious.webp' as precious_url %}
+      {% include 'partials/team_member.html' with image_url=precious_url name='Mrs Precious Kwashirai' role='Trustee' description='Currently a Finance and Admin director at intercrest capital, she has over 15 years experience in insurance and finance industry. She holds a Masters degree in Strategic business planning.' %}
+      <hr class="display-4"></hr>
+      {% static 'images/team/tarisai.webp' as tarisai_url %}
+      {% include 'partials/team_member.html' with image_url=tarisai_url name='Mr Tarisai Matevera' role='Chairman' description='A University of Zimbabwe graduate, He has an Illustrious history in banking. He worked for Barclays bank, The Reserve bank and Met bank. He is involved in various charity activities and runs a scholarship fund for 20 high school children. He brings strategic vision to the organisation.' %}
+    </div>
   </div>
 
   <div class="row">

@@ -47,6 +47,6 @@ urlpatterns = [
     #     name='django.contrib.sitemaps.views.sitemap'),
 
     path('', HomeView.as_view(), name='home'),
-    path('about/', WhoWeAreView.as_view(), name='who_we_are'),
-    path('meet_the_team/', MeetTheTeamView.as_view(), name='meet_the_team')
+    path('who-we-are/', WhoWeAreView.as_view(), name='who_we_are'),
+    path('meet-the-team/', MeetTheTeamView.as_view(), name='meet_the_team')
 ]

@@ -7,11 +7,11 @@
 #team-tab {
   .nav-item {
     .nav-link {
-      color: $menu-item-color;
+      color: $color-body;
       background-color: transparent;
 
       &.active {
-        color: $primary;
+        color: $color-primary;
         border-bottom: 5px solid;
       }
     }
