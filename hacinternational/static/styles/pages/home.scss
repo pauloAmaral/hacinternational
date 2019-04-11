@@ -3,6 +3,12 @@
 $hero-font-color: #FFF;
 $section-subtitle-color: #23262a;
 
+#home-hero-new {
+  h2 {
+    color: $color-primary;
+  }
+}
+
 #home-hero {
   // min-height: 422px;
   // position: relative;
