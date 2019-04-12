@@ -4,6 +4,8 @@ $hero-font-color: #FFF;
 $section-subtitle-color: #23262a;
 
 #home-hero-new {
+  overflow: hidden;
+
   h2 {
     color: $color-primary;
   }
@@ -46,28 +48,6 @@ $section-subtitle-color: #23262a;
 
 
 .home-section {
-  &#home-commitment{
-    .commitment-item {
-      margin-bottom: 60px;
-
-      .commitment-img img {
-        max-width: 296px;
-      }
-
-      .commitment-content {
-        margin-top: 15px;
-
-        p {
-          margin-bottom: 0;
-        }
-
-        .commitment-title {
-          text-transform: capitalize;
-        }
-      }
-    }
-  }
-
   &#home-events {
     .events-item {
       margin-bottom: 60px;

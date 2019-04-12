@@ -28,6 +28,10 @@ hr {
   }
 }
 
+.heading {
+  color: $color-primary;
+}
+
 .sub-heading {
   color: $color-secondary;
 }
@@ -82,9 +86,12 @@ header {
               padding-left: 30px;
             }
 
-            &:hover {
+            &:not(.btn):not(.active):hover {
               color: $color-primary;
+              transition: border-width 0.2s ease;
+              border-bottom: 5px solid;
             }
+
           }
 
           &.active {
@@ -164,7 +171,31 @@ ul.icon-list {
   }
 }
 
-@media (max-width: 1200px) {
+footer {
+  color: $color-body;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+
+  ul {
+    list-style: none;
+
+    &.link-list {
+      li {
+        a {
+          color: $color-body;
+          font-family: 'Roboto', sans-serif;
+          font-size: 15px;
+          font-weight: 300;
+          letter-spacing: 0.3px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
   header{
     .navbar-light {
       .navbar-collapse {
@@ -182,7 +213,29 @@ ul.icon-list {
   }
 }
 
-@media (max-width: 575.98px) {
+@media only screen and (min-width: 768px) {
+  footer {
+    ul {
+      &.link-list {
+        li {
+          border-right: 1px solid $color-body;
+          padding-right: 1rem;
+          padding-left: 1rem;
+
+          &:last-child {
+            border-right: 0;
+
+            a {
+              padding-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 575.98px) {
   header {
     .navbar-light {
       .navbar-brand {

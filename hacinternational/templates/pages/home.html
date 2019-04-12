@@ -7,8 +7,8 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid bg-light">
-  <div id="home-hero-new" class="container mt-5 mb-5 pb-3 pt-3">
+<div id="home-hero-new" class="container-fluid bg-light mb-3">
+  <div class="container pb-3 pt-3">
     <div class="row">
       <div class="col-12 col-lg-3 text-center">
         <img class="img-fluid" src="{% static 'images/home_hero_child.jpg' %}">
@@ -106,51 +106,8 @@
     </div>
   </div>
   {% endcomment %}
-  <section id="home-commitment" class="row home-section">
-    <div class="col-12 section-description">
-      <h1 class="title">Our commitment</h1>
-      <p class="lead">Through the provision of financial, commercial and tangible products our mission is to restore meaning and happiness to the lives of the less fortunate, widowed, disabled and orphans in order to inspire hope through the return of their dignity and an enhanced exposure to otherwise lacking opportunity.</p>
-    </div>
 
-    <div class="col-lg-4 text-center">
-      <div class="commitment-item">
-        <div class="commitment-img">
-          <img class="rounded" src="{% static 'images/commitment_communities.webp' %}" alt="">
-        </div>
-        <div class="commitment-content">
-          <h3 class="commitment-title">The communities</h3>
-          <p>Rural communities find it harder to cope with the perpetual strain of lack of finance.</p>
-          <p>By helping these communities we aim to empower them to achieve self financial sustainance through various micro project schemes.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-4 text-center">
-      <div class="commitment-item">
-        <div class="commitment-img">
-          <img class="rounded" src="{% static 'images/commitment_projects.webp' %}" alt="">
-        </div>
-        <div class="commitment-content">
-          <h3 class="commitment-title">Our projects</h3>
-          <p>Hope For African Communities exists to assist in income generating activities for widows, educational support and health programmes for vulnerable orphans, help as much as we can the disabled and provide high school educational for vulnerable talented youth.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-4 text-center">
-      <div class="commitment-item">
-        <div class="commitment-img">
-          <img class="rounded" src="{% static 'images/commitment_benificiaries.webp' %}" alt="">
-        </div>
-        <div class="commitment-content">
-          <h3 class="commitment-title">The beneficiaries</h3>
-          <p>We particularly aim to help the groups that are easily overlooked by more conventional government aid because of society stigmas.</p>
-          <p>These are Widows, the disabled, orphans and the elderly.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  {% comment %}
   <section id="home-events" class="row home-section">
     <div class="col-12 section-description">
       <h1 class="title">Upcoming events</h1>
@@ -200,5 +157,6 @@
       </div>
     </div>
   </section>
+  {% endcomment %}
 </div>
 {% endblock %}

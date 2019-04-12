@@ -40,14 +40,12 @@
 	{% block content %}
 	{% endblock %}
 
-	<!-- FOOTER -->
-	<footer id="footer" class="section">
-		{# {% include 'partials/footer.html' %} #}
-	</footer>
-	<!-- /FOOTER -->
-
 	{% javascript 'jquery' %}
 	{% javascript 'bootstrap' %}
+
+	<footer id="footer">
+		{% include 'partials/footer.html' %}
+	</footer>
 </body>
 
 </html>
