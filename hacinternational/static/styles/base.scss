@@ -36,19 +36,6 @@ hr {
   color: $color-secondary;
 }
 
-section {
-  .section-description {
-    margin-bottom: 2rem;
-
-    .title {
-      color: $color-secondary;
-      text-transform: capitalize;
-      margin-bottom: 30px;
-      border-bottom: 1px solid $color-border;
-    }
-  }
-}
-
 .parallax-section {
   background: rgba(0,0,0,0.4) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -180,6 +167,23 @@ footer {
 
   ul {
     list-style: none;
+
+    &.social {
+      li {
+        margin-right: 1rem;
+        margin-left: 1rem;
+
+        i {
+          &.fa-facebook {
+            color: $color-facebook;
+          }
+
+          &.fa-youtube {
+            color: $color-youtube;
+          }
+        }
+      }
+    }
 
     &.link-list {
       li {

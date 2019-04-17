@@ -7,22 +7,22 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid bg-light">
-<div id="main" class="container pb-3 pt-3">
-  {% include 'partials/page_title.html' with page_title='Who We Are' %}
+<section class="container-fluid bg-light mb-5">
+  <div id="main" class="container pb-3 pt-3">
+    {% include 'partials/page_title.html' with page_title='Who We Are' %}
 
-  <div class="row">
-    <div class="col-md-6 mx-auto d-block">
-      <img src="{% static 'images/about_us.jpg' %}" class="img-fluid" alt="About us">
-    </div>
-    <div class="col-lg-6 d-flex align-items-center pt-2 pt-lg-0">
-      <p class="lead">Hope for African Communities (HAC) is a charity which seeks to empower poor African communities by availing them with opportunities to better themselves. We aim to rebuild devastated and helpless lives by providing resources and programmes to help those affected to be self sustainable. Our emphasis is on orphans and widows assisting on income generation and provide educational opportunities for orphans</p>
+    <div class="row">
+      <div class="col-md-6 mx-auto d-block">
+        <img src="{% static 'images/about_us.jpg' %}" class="img-fluid" alt="About us">
+      </div>
+      <div class="col-lg-6 d-flex align-items-center pt-2 pt-lg-0">
+        <p class="lead">Hope for African Communities (HAC) is a charity which seeks to empower poor African communities by availing them with opportunities to better themselves. We aim to rebuild devastated and helpless lives by providing resources and programmes to help those affected to be self sustainable. Our emphasis is on orphans and widows assisting on income generation and provide educational opportunities for orphans</p>
+      </div>
     </div>
   </div>
-</div>
-</div>
+</section>
 
-<div id="secondary" class="container">
+<section id="secondary" class="container">
   <div class="row">
     <div class="col-md-4">
       <div class="card text-center">
@@ -54,9 +54,9 @@
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<div id="help" class="container-fluid pl-0 pr-0">
+<section id="help" class="container-fluid pl-0 pr-0 mb-5">
   <div class="parallax-section d-flex align-items-center justify-content-center" style="background-image: url({% static 'images/about_us_help.png' %});">
     <div class="row text-center">
       <div class="col-10 offset-1">
@@ -66,9 +66,9 @@
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<section id="commitment" class="container pt-5">
+<section id="commitment" class="container">
   <div class="row">
     <div class="col-12">
       <h3 class="heading">Our Commitment</h3>
