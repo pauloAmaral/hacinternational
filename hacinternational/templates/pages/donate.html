@@ -46,7 +46,7 @@
           </a>
           <div class="card-body pt-1">
             <p class="card-text">From time to time we have volunteers who host small events in order to raise funds for the charity. We welcome all the aid we can get and if you can organise events in aid of our charity, we will always welcome this.</p>
-            <p>You can also check our latest volunteering opportunities <a href="#">here</a>.</p>
+            <p>You can check our latest volunteering opportunities <a href="{% url 'volunteer_list' %}">here</a>.</p>
           </div>
         </div>
       </div>
@@ -59,7 +59,7 @@
           </a>
           <div class="card-body pt-1">
             <p class="card-text">Poor communities can use most things we take for granted: Old clothes, appliances, mobile phones bicycles and much more. We package all these donations and send them away for redistribution. As such we welcome everything deemed useful.</p>
-            <p><a href="{% url 'contact_us' %}">Get in touch</a> and we will make sure your donations will get to the people in need.</p>
+            <p><a href="{% url 'contact_us' %}?subject=Donation">Get in touch</a> and we will make sure your donations will get to the people in need.</p>
           </div>
         </div>
       </div>

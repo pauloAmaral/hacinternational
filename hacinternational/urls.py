@@ -25,7 +25,8 @@ from hacinternational.apps.contact_us.views import (
     ContactUsView, ContactUsSuccessView)
 from hacinternational.apps.donate.views import DonateView
 from hacinternational.apps.home.views import HomeView
-from hacinternational.apps.volunteer.views import VolunteerListView
+from hacinternational.apps.volunteer.views import (
+    VolunteerListView, VolunteerOpportunityView)
 
 
 
@@ -44,6 +45,7 @@ from hacinternational.apps.volunteer.views import VolunteerListView
 #     ('static', StaticViewSitemap),
 # ])
 
+admin.site.site_header = 'Hope For African Communities administration'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -58,4 +60,6 @@ urlpatterns = [
     path('contact-us/success', ContactUsSuccessView.as_view(),
          name='contact_us_success'),
     path('volunteer/', VolunteerListView.as_view(), name='volunteer_list'),
+    path('volunteer/<int:id>/', VolunteerOpportunityView.as_view(),
+         name='volunteer_opportunity'),
 ]

@@ -7,3 +7,4 @@ from hacinternational.apps.volunteer.models import VolunteerOpportunity
 @admin.register(VolunteerOpportunity)
 class VolunteerOpportunityAdmin(admin.ModelAdmin):
     form = VolunteerOpportunityForm
+    list_display = ['title', 'is_active', 'created_at']

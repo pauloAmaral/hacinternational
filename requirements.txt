@@ -4,7 +4,9 @@
 #
 #    pip-compile --output-file requirements.txt requirements.in
 #
+django-ckeditor==5.7.0
 django-crispy-forms==1.7.2
+django-js-asset==1.2.2    # via django-ckeditor
 django-pipeline==1.6.14
 django-sendgrid-v5==0.8.0
 django==2.1.7

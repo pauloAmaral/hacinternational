@@ -6,10 +6,12 @@ ENV PYTHONVERSION 3.7.2
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt -y update && apt -y upgrade && \
-    apt install -y make build-essential libssl-dev zlib1g-dev \
+    apt install -y make build-essential zlib1g-dev \
                    libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm  \
                    libncurses5-dev libncursesw5-dev xz-utils tk-dev \
-                   libffi-dev liblzma-dev python-openssl git ruby-sass
+                   libffi-dev liblzma-dev python-openssl git ruby-sass \
+                   nodejs-dev node-gyp libssl1.0-dev npm
+RUN npm install -g yuglify
 
 # Setup appuser with the correct permissions
 RUN groupadd -g 1000 -r appuser && \
@@ -43,3 +45,4 @@ RUN /home/appuser/.pyenv/shims/pip install --upgrade pip
 RUN /home/appuser/.pyenv/shims/pip install -r $PROJECT_DIR/requirements.txt
 
 WORKDIR $PROJECT_DIR
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

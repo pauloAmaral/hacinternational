@@ -118,7 +118,31 @@ header {
   color: white !important;
   font-weight: 400;
   border: none;
-  /*border-radius: 25px;*/
+  overflow: hidden;
+  opacity: 0.9;
+  -webkit-transition: 0.6s all;
+  transition: 0.6s all;
+
+  font: bold 14px 'Proxima Nova Rg', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  border-radius: .25rem;
+
+  &:hover {
+    background-color: $primary-light;
+  }
+
+  &:active, &:focus, &:not(:disabled):not(.disabled):active {
+    background-color: $color-primary;
+    box-shadow: none;
+  }
+}
+
+.btn-secondary {
+  background-color: $color-secondary;
+  color: white !important;
+  font-weight: 400;
+  border: none;
   overflow: hidden;
   opacity: 0.9;
   -webkit-transition: 0.6s all;
@@ -131,11 +155,11 @@ header {
   border-radius: .25rem;
 
   &:hover {
-    background-color: $primary-light;
+    background-color: $secondary-light;
   }
 
   &:active, &:focus, &:not(:disabled):not(.disabled):active {
-    background-color: $color-primary;
+    background-color: $color-secondary;
     box-shadow: none;
   }
 }

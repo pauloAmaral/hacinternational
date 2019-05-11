@@ -26,6 +26,10 @@
           <a class="nav-link" href="#">Events</a>
         </li>
 
+        <li class="nav-item {% if request.resolver_match.url_name == 'volunteer_list' %}active{% endif %}">
+          <a class="nav-link" href="{% url 'volunteer_list' %}">Volunteer</a>
+        </li>
+
         <li class="nav-item {% if request.resolver_match.url_name == 'contact_us' %}active{% endif %}">
           <a class="nav-link" href="{% url 'contact_us' %}">Contact Us</a>
         </li>

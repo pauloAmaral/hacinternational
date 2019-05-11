@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load pipeline %}
+
+{% block content %}
+<section class="container-fluid bg-light mb-5">
+  <div id="main" class="container pb-3 pt-3">
+    {% include 'partials/page_title.html' with page_title='Volunteer for '|add:opportunity.title %}
+    <p><span class="font-weight-bold">Duration: </span>{{ opportunity.get_duration_display }}</p>
+    <p><span class="font-weight-bold">Location: </span>{{ opportunity.location }}</p>
+  </div>
+</section>
+
+<section class="container">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <h2 class="sub-heading">What will you be doing?</h2>
+      <p>{{ opportunity.description | safe }}</p>
+
+      <h2 class="sub-heading mt-4">Who are we looking for?</h2>
+      <p>{{ opportunity.volunteer_profile | safe }}</p>
+
+      {% if opportunity.reason %}
+        <h2 class="sub-heading mt-4">Why will you want to do this?</h2>
+        <p>{{ opportunity.reason | safe }}</p>
+      {% endif %}
+
+      {% if opportunity.rewards %}
+        <h2 class="sub-heading mt-4">What will you get from this opportunity?</h2>
+        <p>{{ opportunity.rewards | safe }}</p>
+      {% endif %}
+
+      <div class="mt-4">
+        <a href="{% url 'contact_us' %}?subject=Volunteer for: {{ opportunity.title }}" class="btn btn-primary mr-2">Volunteer Now</a>
+        <a href="{% url 'volunteer_list' %}" class="btn btn-secondary">Go Back</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

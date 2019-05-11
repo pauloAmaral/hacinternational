@@ -1,4 +1,5 @@
 from django import forms
+from ckeditor.widgets import CKEditorWidget
 
 from hacinternational.apps.volunteer.models import VolunteerOpportunity
 
@@ -7,18 +8,19 @@ class VolunteerOpportunityForm(forms.ModelForm):
     class Meta:
         model = VolunteerOpportunity
         fields = '__all__'
-        verbose_name = 'Volunteering opportunity'
-        verbose_name_plural = 'Volunteering opportunities'
 
     description = forms.CharField(
-        widget=forms.Textarea(),
-        help_text='What the volunteer will need to do')
+        widget=CKEditorWidget(),
+        help_text='What the volunteer will need to do (What will you be doing?)'
+    )
     volunteer_profile = forms.CharField(
-        widget=forms.Textarea(), required=False,
-        help_text='What kind of volunteer we are looking for')
+        widget=CKEditorWidget(),
+        help_text='What kind of volunteer we are looking for '
+                  '(Who are we looking for?)')
     reason = forms.CharField(
-        widget=forms.Textarea(), required=False,
-        help_text='Why this is important')
+        widget=CKEditorWidget(), required=False,
+        help_text='Why this is important (Why will you want to do this?)')
     rewards = forms.CharField(
-        widget=forms.Textarea(), required=False,
-        help_text='What the volunteer will get for doing this')
+        widget=CKEditorWidget(), required=False,
+        help_text='What the volunteer will get for doing this '
+                  '(What will you get from this opportunity?)')

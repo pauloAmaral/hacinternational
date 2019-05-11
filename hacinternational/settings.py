@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     # 3rd party apps
     'pipeline',
     'crispy_forms',
+    'ckeditor',
 
     # website specific apps
     'hacinternational.apps.home',
@@ -162,7 +163,7 @@ STATICFILES_FINDERS = (
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 EMAIL_BACKEND = 'sendgrid_backend.SendgridBackend'
-SENDGRID_API_KEY = 'ADD_KEY_HERE'
+SENDGRID_API_KEY = 'ADD_TOKEN_HERE'
 SENDGRID_SANDBOX_MODE_IN_DEBUG = False
 # CUSTOM VARIABLES
 CONTACT_EMAIL = 'ppaixaoamaral@gmail.com'
