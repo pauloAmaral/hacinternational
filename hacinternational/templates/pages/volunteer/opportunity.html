@@ -5,7 +5,7 @@
 {% block content %}
 <section class="container-fluid bg-light mb-5">
   <div id="main" class="container pb-3 pt-3">
-    {% include 'partials/page_title.html' with page_title='Volunteer for '|add:opportunity.title %}
+    {% include 'partials/page_title.html' with page_title='Volunteer for <span class="sub-heading">'|add:opportunity.title|add:'</span>' %}
     <p><span class="font-weight-bold">Duration: </span>{{ opportunity.get_duration_display }}</p>
     <p><span class="font-weight-bold">Location: </span>{{ opportunity.location }}</p>
   </div>
@@ -30,7 +30,7 @@
         <p>{{ opportunity.rewards | safe }}</p>
       {% endif %}
 
-      <div class="mt-4">
+      <div class="mt-5">
         <a href="{% url 'contact_us' %}?subject=Volunteer for: {{ opportunity.title }}" class="btn btn-primary mr-2">Volunteer Now</a>
         <a href="{% url 'volunteer_list' %}" class="btn btn-secondary">Go Back</a>
       </div>

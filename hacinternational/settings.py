@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'false').lower() == 'true'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -54,7 +54,8 @@ INSTALLED_APPS = [
     'hacinternational.apps.about',
     'hacinternational.apps.contact_us',
     'hacinternational.apps.donate',
-    'hacinternational.apps.volunteer'
+    'hacinternational.apps.volunteer',
+    'hacinternational.apps.events',
 ]
 
 MIDDLEWARE = [

@@ -25,7 +25,7 @@
           <p class="font-weight-bold">{{ opportunity.get_duration_display }}</p>
           <p><span class="font-weight-bold">Location: </span>{{ opportunity.location }}</p>
           <div class="truncate-text-multiline">
-              {{ opportunity.description }}
+              {{ opportunity.description | safe }}
           </div>
           <div class="mt-2">
             <a href="{% url 'contact_us' %}?subject=Volunteer for: {{ opportunity.title }}" class="btn btn-primary mr-2">Apply</a>

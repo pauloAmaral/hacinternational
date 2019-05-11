@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.shortcuts import render
 from django.views.generic import TemplateView
 
@@ -21,7 +22,10 @@ class VolunteerOpportunityView(TemplateView):
     template_name = 'pages/volunteer/opportunity.html'
 
     def get(self, request, id, *args, **kwargs):
-        opportunity = VolunteerOpportunity.active_objects.get(id=id)
+        try:
+            opportunity = VolunteerOpportunity.active_objects.get(id=id)
+        except VolunteerOpportunity.DoesNotExist:
+            raise Http404('No VolunteerOpportunity matches the given query.')
 
         ctx = {
             'opportunity': opportunity
