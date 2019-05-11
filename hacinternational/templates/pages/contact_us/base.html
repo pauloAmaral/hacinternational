@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load pipeline %}
+
+{% block content %}
+<section class="container-fluid bg-light mb-5">
+  <div id="main" class="container pt-3">
+    {% include 'partials/page_title.html' with page_title='Contact Us' %}
+  </div>
+</section>
+
+<section class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      {% block inner_content %}
+      {% endblock %}
+    </div>
+    <div class="col-lg-6 align-self-center mt-5 mt-lg-0">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2479.7412793809435!2d0.4582874516818284!3d51.572976279546175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8c6975957442f%3A0x73b68c6f9190d7cc!2s32+Audley+Way%2C+Basildon+SS14+2AQ!5e0!3m2!1spt-PT!2suk!4v1555948142144!5m2!1spt-PT!2suk" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

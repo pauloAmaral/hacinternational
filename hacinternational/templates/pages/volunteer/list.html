@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load pipeline %}
+
+{% block content %}
+<section class="container-fluid bg-light mb-5">
+  <div id="main" class="container pb-3 pt-3">
+    {% include 'partials/page_title.html' with page_title='Volunteer' %}
+
+    <section class="row">
+      <div class="col-12">
+        <p class="lead">Hope For African Communities is a new charity and we need help to provide a better life for those in need. You can find all our current volunteering opportunities in the list below.</p>
+        <p>If you want to help us but you can't find the right opportunity for you in this list, feel free to <a href="{% url 'contact_us' %}">contact us</a> as we would love to hear from you.</p>
+      </div>
+    </section>
+  </div>
+</section>
+
+<section class="container">
+  {% for opportunity in opportunities %}
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+        <h2 class="sub-heading">{{ opportunity.title }}</h2>
+        <p class="font-weight-bold">{{ opportunity.get_duration_display }}</p>
+        <p><span class="font-weight-bold">Location: </span>{{ opportunity.location }}</p>
+        <div class="truncate-text-multiline">
+            {{ opportunity.description }}
+        </div>
+        <div class="mt-2">
+          <a href="{% url 'donate' %}" class="btn btn-primary mr-2">Read more</a>
+          <a href="{% url 'contact_us' %}?subject=Volunteer for: {{ opportunity.title }}" class="btn btn-primary">Volunteer</a>
+        </div>
+      </div>
+    </div>
+    {% if not forloop.last %}
+      <hr class="display-4">
+    {% endif %}
+  {% endfor%}
+</section>
+{% endblock %}

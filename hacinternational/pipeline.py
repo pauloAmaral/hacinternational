@@ -18,15 +18,21 @@ def get_assets_pipeline(is_debug=False):
             },
             'bootstrap': {
                 'source_filenames': (
-                    'scripts/external/bootstrap/bootstrap-4.0.0.min.js',
+                    'scripts/external/bootstrap/bootstrap-4.3.1.min.js',
                 ),
                 'output_filename': 'bootstrap.js',
+            },
+            'main': {
+                'source_filenames': (
+                    'scripts/main.js',
+                ),
+                'output_filename': 'main.js',
             }
         },
         'STYLESHEETS': {
             'boostrap': {
                 'source_filenames': (
-                    'styles/external/boostrap/bootstrap-4.0.0.min.css',
+                    'styles/external/boostrap/bootstrap-4.3.1.min.css',
                 ),
                 'output_filename': 'bootstrap.css',
             },
@@ -53,6 +59,12 @@ def get_assets_pipeline(is_debug=False):
                     'styles/pages/meet_the_team.scss',
                 ),
                 'output_filename': 'meet_the_team.css',
+            },
+            'pages-donate': {
+                'source_filenames': (
+                    'styles/pages/donate.scss',
+                ),
+                'output_filename': 'donate.css',
             },
         },
         'COMPILERS': (

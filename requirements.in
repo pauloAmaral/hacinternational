@@ -1,2 +1,4 @@
 django
 django-pipeline
+django-crispy-forms
+django-sendgrid-v5

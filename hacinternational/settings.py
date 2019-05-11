@@ -46,9 +46,14 @@ INSTALLED_APPS = [
 
     # 3rd party apps
     'pipeline',
+    'crispy_forms',
 
     # website specific apps
-    'hacinternational.apps.home'
+    'hacinternational.apps.home',
+    'hacinternational.apps.about',
+    'hacinternational.apps.contact_us',
+    'hacinternational.apps.donate',
+    'hacinternational.apps.volunteer'
 ]
 
 MIDDLEWARE = [
@@ -153,3 +158,11 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'pipeline.finders.PipelineFinder',
 )
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+EMAIL_BACKEND = 'sendgrid_backend.SendgridBackend'
+SENDGRID_API_KEY = 'ADD_KEY_HERE'
+SENDGRID_SANDBOX_MODE_IN_DEBUG = False
+# CUSTOM VARIABLES
+CONTACT_EMAIL = 'ppaixaoamaral@gmail.com'

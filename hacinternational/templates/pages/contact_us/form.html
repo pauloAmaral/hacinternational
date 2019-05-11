@@ -1,0 +1,10 @@
+{% extends 'pages/contact_us/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block inner_content %}
+  <form method="post">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <input class="btn btn-primary" type="submit" value="Send message">
+  </form>
+{% endblock %}

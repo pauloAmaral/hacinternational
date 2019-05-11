@@ -21,7 +21,11 @@ from django.contrib.sitemaps.views import sitemap
 from django.urls import path, reverse
 
 from hacinternational.apps.about.views import WhoWeAreView, MeetTheTeamView
+from hacinternational.apps.contact_us.views import (
+    ContactUsView, ContactUsSuccessView)
+from hacinternational.apps.donate.views import DonateView
 from hacinternational.apps.home.views import HomeView
+from hacinternational.apps.volunteer.views import VolunteerListView
 
 
 
@@ -42,11 +46,16 @@ from hacinternational.apps.home.views import HomeView
 
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     # url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps},
     #     name='django.contrib.sitemaps.views.sitemap'),
 
     path('', HomeView.as_view(), name='home'),
     path('who-we-are/', WhoWeAreView.as_view(), name='who_we_are'),
-    path('meet-the-team/', MeetTheTeamView.as_view(), name='meet_the_team')
+    path('meet-the-team/', MeetTheTeamView.as_view(), name='meet_the_team'),
+    path('donate/', DonateView.as_view(), name='donate'),
+    path('contact-us/', ContactUsView.as_view(), name='contact_us'),
+    path('contact-us/success', ContactUsSuccessView.as_view(),
+         name='contact_us_success'),
+    path('volunteer/', VolunteerListView.as_view(), name='volunteer_list'),
 ]

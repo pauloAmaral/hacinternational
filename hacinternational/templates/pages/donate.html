@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load pipeline %}
+
+{% block extra-stylesheet %}
+  {% stylesheet 'pages-donate' %}
+{% endblock %}
+
+{% block content %}
+<section class="container-fluid bg-light mb-5">
+  <div id="main" class="container pb-3 pt-3">
+    {% include 'partials/page_title.html' with page_title='Donate' %}
+
+    <section class="row">
+      <div class="col-12">
+        <p class="lead">We are a charity and rely on donations. These donations are a vital source of income and as such they are welcome all the time. Below are secure ways you can donate.</p>
+      </div>
+    </section>
+  </div>
+</section>
+
+<section class="container">
+  <div class="row text-center">
+    <div class="col-6">
+      Donate with Paypal
+    </div>
+    <div class="col-6">
+      Donate with Givey
+    </div>
+  </div>
+</section>
+
+<section id="other-help" class="container mt-5">
+  <div class="row mb-5">
+    <div class="col-12">
+      <h3 class="heading">How else can I help?</h3>
+    </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-4">
+        <div class="card text-center">
+          <a href="#">
+            <i class="fas fa-hand-holding-heart"></i>
+            <h5 class="card-title">Become a Volunteer</h5>
+          </a>
+          <div class="card-body pt-1">
+            <p class="card-text">From time to time we have volunteers who host small events in order to raise funds for the charity. We welcome all the aid we can get and if you can organise events in aid of our charity, we will always welcome this.</p>
+            <p>You can also check our latest volunteering opportunities <a href="#">here</a>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card text-center">
+          <a href="#">
+            <i class="fas fa-gift"></i>
+            <h5 class="card-title">Donate things you no longer use</h5>
+          </a>
+          <div class="card-body pt-1">
+            <p class="card-text">Poor communities can use most things we take for granted: Old clothes, appliances, mobile phones bicycles and much more. We package all these donations and send them away for redistribution. As such we welcome everything deemed useful.</p>
+            <p><a href="{% url 'contact_us' %}">Get in touch</a> and we will make sure your donations will get to the people in need.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card text-center">
+          <a href="#">
+            <i class="fas fa-walking"></i>
+            <h5 class="card-title">Attend our events</h5>
+          </a>
+          <div class="card-body pt-1">
+            <p class="card-text">As we hold a number of events annually. you can help by becoming a member of our community who attends our events. By supporting us on these events we enhance our fundraising ability.</p>
+            <p>Check our <a href="#">latest events</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+{% endblock %}
