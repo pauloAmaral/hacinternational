@@ -22,6 +22,12 @@ RUN mkdir -p $PROJECT_DIR
 COPY ./ $PROJECT_DIR
 RUN chown -R appuser:appuser $PROJECT_DIR
 
+# Make sure appuser's home directory exists and it has the correct permissions
+RUN mkdir -p /home/appuser
+RUN chown -R appuser:appuser /home/appuser
+
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
 USER appuser
 
 # Install pyenv
@@ -45,4 +51,3 @@ RUN /home/appuser/.pyenv/shims/pip install --upgrade pip
 RUN /home/appuser/.pyenv/shims/pip install -r $PROJECT_DIR/requirements.txt
 
 WORKDIR $PROJECT_DIR
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
