@@ -29,6 +29,10 @@ RUN chown -R appuser:appuser $PROJECT_DIR
 RUN mkdir -p /home/appuser
 RUN chown -R appuser:appuser /home/appuser
 
+# Production related setup
+RUN cp $PROJECT_DIR/nginx.conf /etc/nginx/nginx.conf && \
+    cp $PROJECT_DIR/nginx_hacinternational /etc/nginx/sites-available/
+
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 USER appuser
@@ -52,10 +56,6 @@ RUN /home/appuser/.pyenv/bin/pyenv global appenv
 COPY ./requirements.txt $PROJECT_DIR/requirements.txt
 RUN /home/appuser/.pyenv/shims/pip install --upgrade pip
 RUN /home/appuser/.pyenv/shims/pip install -r $PROJECT_DIR/requirements.txt
-
-# Production related setup
-RUN cp $PROJECT_DIR/nginx.conf /etc/nginx/nginx.conf && \
-    cp $PROJECT_DIR/nginx_hacinternational /etc/nginx/sites-available/
 
 EXPOSE 8001
 ENTRYPOINT ["/hacinternational/entrypoint.sh"]
