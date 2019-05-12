@@ -4,3 +4,4 @@ django-crispy-forms
 django-sendgrid-v5
 django-ckeditor
 pillow
+uwsgi

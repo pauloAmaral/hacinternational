@@ -15,3 +15,4 @@ pillow==6.0.0
 python-http-client==3.1.0  # via django-sendgrid-v5, sendgrid
 pytz==2018.9              # via django
 sendgrid==6.0.4           # via django-sendgrid-v5
+uwsgi==2.0.18

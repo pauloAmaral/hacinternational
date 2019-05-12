@@ -17,6 +17,20 @@ server-dev:
   environment:
     SECRET_KEY: 'dev_secret_key'
     DEBUG: 'true'
+    ENVIRONMENT: 'development'
+    SENDGRID_API_KEY: 'ADD_TOKEN_HERE'
   ports:
     - "8001:8001"
-  command: /home/appuser/.pyenv/shims/python manage.py runserver 0:8001
+
+server-prod:
+  build: .
+  dockerfile: Dockerfile
+  volumes:
+    - .:/hacinternational
+  environment:
+    SECRET_KEY: 'sMXwbiqbwiOyf^54z&Ua'
+    DEBUG: 'false'
+    ENVIRONMENT: 'production'
+    SENDGRID_API_KEY: 'ADD_TOKEN_HERE'
+  ports:
+    - "8001:8001"

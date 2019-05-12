@@ -10,8 +10,11 @@ RUN apt -y update && apt -y upgrade && \
                    libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm  \
                    libncurses5-dev libncursesw5-dev xz-utils tk-dev \
                    libffi-dev liblzma-dev python-openssl git ruby-sass \
-                   nodejs-dev node-gyp libssl1.0-dev npm
+                   nodejs-dev node-gyp libssl1.0-dev npm software-properties-common
 RUN npm install -g yuglify
+
+# Fetch latest stable version of Nginx from the official Nginx ppa and install it
+RUN add-apt-repository -y ppa:nginx/stable && apt-get update && apt-get -y install nginx
 
 # Setup appuser with the correct permissions
 RUN groupadd -g 1000 -r appuser && \
@@ -49,5 +52,13 @@ RUN /home/appuser/.pyenv/bin/pyenv global appenv
 COPY ./requirements.txt $PROJECT_DIR/requirements.txt
 RUN /home/appuser/.pyenv/shims/pip install --upgrade pip
 RUN /home/appuser/.pyenv/shims/pip install -r $PROJECT_DIR/requirements.txt
+
+# Production related setup
+RUN cp $PROJECT_DIR/nginx.conf /etc/nginx/nginx.conf && \
+    cp $PROJECT_DIR/nginx_hacinternational /etc/nginx/sites-available/
+
+EXPOSE 8001
+ENTRYPOINT ["/hacinternational/entrypoint.sh"]
+CMD ["$PROJECT_DIR/run.sh"]
 
 WORKDIR $PROJECT_DIR

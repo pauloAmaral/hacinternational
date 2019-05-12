@@ -1,0 +1,67 @@
+##
+# You should look at the following URL's in order to grasp a solid understanding
+# of Nginx configuration files in order to fully unleash the power of Nginx.
+# http://wiki.nginx.org/Pitfalls
+# http://wiki.nginx.org/QuickStart
+# http://wiki.nginx.org/Configuration
+#
+# Generally, you will want to move this file somewhere, and start with a clean
+# file but keep this around for reference. Or just disable in sites-enabled.
+#
+# Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.
+##
+
+# Redirect non www. urls
+server {
+    listen 8001;
+    listen [::]:8001;
+
+    server_name hacinternational.org;
+    return 301 https://www.hacinternational.org/$request_uri;
+}
+
+# Default server configuration
+#
+server {
+    listen 8001 default_server;
+    listen [::]:8001 default_server;
+
+    real_ip_header    X-Forwarded-For;
+    set_real_ip_from  10.0.0.0/8;
+
+    # http_x_forwarded_proto header added by AWS lb
+    if ($http_x_forwarded_proto = 'http') {
+      rewrite ^ https://$host$request_uri? permanent;
+    }
+
+    # SSL configuration
+    #
+    # listen 443 ssl default_server;
+    # listen [::]:443 ssl default_server;
+    #
+    # Note: You should disable gzip for SSL traffic.
+    # See: https://bugs.debian.org/773332
+    #
+    # Read up on ssl_ciphers to ensure a secure configuration.
+    # See: https://bugs.debian.org/765782
+    #
+
+    server_name _;
+
+    location /static/ {
+        alias /hacinternational/static_prod/;
+        expires max;
+        access_log off;
+        add_header Cache-Control "public";
+
+        # disable CORS restriction for webfonts
+        location ~* .(eot|ttf|woff)$ {
+            add_header Access-Control-Allow-Origin *;
+        }
+    }
+
+    location / {
+        include         uwsgi_params;
+        uwsgi_pass      unix:/hacinternational/uwsgi_hacinternational.sock;
+    }
+}
