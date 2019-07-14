@@ -24,6 +24,7 @@ from hacinternational.apps.about.views import WhoWeAreView, MeetTheTeamView
 from hacinternational.apps.contact_us.views import (
     ContactUsView, ContactUsSuccessView)
 from hacinternational.apps.donate.views import DonateView
+from hacinternational.apps.events.views import EventsView
 from hacinternational.apps.home.views import HomeView
 from hacinternational.apps.volunteer.views import (
     VolunteerListView, VolunteerOpportunityView)
@@ -59,6 +60,7 @@ urlpatterns = [
     path('contact-us/', ContactUsView.as_view(), name='contact_us'),
     path('contact-us/success', ContactUsSuccessView.as_view(),
          name='contact_us_success'),
+    path('events/', EventsView.as_view(), name='events'),
     path('volunteer/', VolunteerListView.as_view(), name='volunteer_list'),
     path('volunteer/<int:id>/', VolunteerOpportunityView.as_view(),
          name='volunteer_opportunity'),

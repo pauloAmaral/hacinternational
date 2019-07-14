@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load pipeline %}
+
+
+{% block content %}
+  {% for event in events %}
+    <img class="img-fluid" src="{{ event.image.url }}" alt="{{ event.title }}"/>
+  {% endfor %}
+{% endblock %}

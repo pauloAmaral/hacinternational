@@ -21,6 +21,9 @@ class Event(BaseModel):
     class Meta:
         ordering = ('-date', '-created_at',)
 
+    objects = models.Manager()
+    active_objects = EventActiveManager()
+
     is_active = models.BooleanField(
         default=True,
         help_text='If not active, it will not be shown on the list of '

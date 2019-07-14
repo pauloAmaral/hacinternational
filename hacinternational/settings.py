@@ -31,6 +31,17 @@ DEBUG = os.environ.get('DEBUG', 'false').lower() == 'true'
 
 ALLOWED_HOSTS = ['*']
 
+AWS_S3_ACCESS_KEY_ID = os.environ.get('DIGITALOCEAN_SPACES_KEY')
+AWS_S3_SECRET_ACCESS_KEY = os.environ.get('DIGITALOCEAN_SPACES_SECRET')
+AWS_STORAGE_BUCKET_NAME = 'media'
+
+# Cloudfront Spaces URL
+AWS_S3_ENDPOINT_URL = 'https://hacinternational.ams3.digitaloceanspaces.com'
+# Cloudfront Spaces CDN URL
+AWS_S3_CUSTOM_DOMAIN = 'hacinternational.ams3.cdn.digitaloceanspaces.com/media'
+
+DEFAULT_FILE_STORAGE = 'hacinternational.storages.MediaStorage'
+DEFAULT_MAX_ALLOWED_UPLOAD = 3 * 1024
 
 # Application definition
 
