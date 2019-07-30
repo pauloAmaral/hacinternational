@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load pipeline %}
+
+
+{% block content %}
+  <section class="container-fluid bg-light mb-5">
+    <div id="main" class="container pb-3 pt-3">
+      {% include 'partials/page_title.html' with page_title=''|add:event.title|add:'' %}
+      <p class="lead"><i class="fas fa-calendar-week mr-2"></i> {{ event.date }}</p>
+      <p class="lead"><i class="fas fa-map-marker-alt mr-2"></i> {{ event.location }}</p>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <div class="text-center align-items-center">
+          <img style="max-height: 450px;" class="img-fluid" src="{{ event.image.url }}">
+        </div>
+
+        <div class="mt-5">
+          <p>{{ event.description | safe }}</p>
+        </div>
+
+        <div class="mt-5">
+          <a href="{% url 'events' %}" class="btn btn-secondary">Go Back</a>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

@@ -5,7 +5,43 @@
 
 
 {% block content %}
-  {% for event in events %}
-    <img class="img-fluid" src="{{ event.image.url }}" alt="{{ event.title }}"/>
-  {% endfor %}
+  <section class="container-fluid bg-light mb-5">
+    <div id="main" class="container pb-3 pt-3">
+      {% include 'partials/page_title.html' with page_title='Our Events' %}
+
+      <section class="row">
+        <div class="col-12">
+          <p class="lead">We have a number of functions we host throughout the year to enable us to fund raise for our charity. These events are going to be displayed here and all the information required will be found here and will be up to date.</p>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <div class="container">
+    {% if events %}
+      <div class="row justify-content-between">
+        {% for event in events %}
+          <div class="col-lg-4 mt-4">
+            <div class="card event h-100">
+              <img style="max-height: 185px;" class="card-img-top" src="{{ event.image.url }}" alt="communities">
+              <div class="card-body">
+                <h5 class="card-title">{{ event.title }}</h5>
+
+                <p class="card-text"><i class="fas fa-calendar-week mr-2"></i> {{ event.date }}</p>
+                <p class="card-text"><i class="fas fa-map-marker-alt mr-2"></i> {{ event.location }}</p>
+
+                <a href="{% url 'event' event_id=event.id %}" class="btn btn-secondary mt-2">Read more</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+    {% else %}
+      <div class="text-center">
+        <p class="lead">We are sorry, but at the moment we are not running any events.</p>
+        <p>Feel free to <a href="{% url 'contact_us' %}?subject=Event idea">contact us</a> to make a proposal as we are always looking for ideas.</p>
+      </div>
+    {% endif %}
+  </div>
 {% endblock %}

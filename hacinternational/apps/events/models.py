@@ -11,7 +11,7 @@ class EventActiveManager(models.Manager):
         return super().get_queryset().filter(
                 models.Q(is_active=True) &
                 models.Q(
-                    models.Q(date__lte=datetime.datetime.now().date()) |
+                    models.Q(date__gte=datetime.datetime.now().date()) |
                     models.Q(date__isnull=True)
                 )
         )
@@ -19,7 +19,7 @@ class EventActiveManager(models.Manager):
 
 class Event(BaseModel):
     class Meta:
-        ordering = ('-date', '-created_at',)
+        ordering = ('date', 'created_at',)
 
     objects = models.Manager()
     active_objects = EventActiveManager()

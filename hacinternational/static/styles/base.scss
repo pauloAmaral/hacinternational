@@ -224,6 +224,22 @@ footer {
   }
 }
 
+.card {
+  i {
+    color: $color-secondary;
+  }
+
+  &.event {
+    border: none;
+  }
+}
+
+#main {
+  i {
+    color: $color-secondary;
+  }
+}
+
 @media only screen and (max-width: 1200px) {
   header{
     .navbar-light {

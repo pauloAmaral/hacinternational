@@ -20,12 +20,16 @@
 </section>
 
 <section class="container">
-  <div class="row text-center">
+  <div class="row text-center align-items-center">
     <div class="col-6">
-      Donate with Paypal
+      <a href="https://www.paypal.com/donate/?token=Z6Pbb_-R75o_VmliD3eBL8DUkzKwmc7vRJd89XW9cnv4P-Tp17TKuB_KVMWqBOP3Yk2aDG&country.x=GB&locale.x=GB">
+        <img style="max-height: 275px;" class="img-fluid" src="{% static 'images/paypal_donate.png' %}" alt="Paypal Donate">
+      </a>
     </div>
     <div class="col-6">
-      Donate with Givey
+      <a href="https://www.givey.com/hopeforafricancommunitiesuk">
+        <img style="max-height: 275px;" class="img-fluid" src="{% static 'images/givey_donate.png' %}" alt="GiveyDonate">
+      </a>
     </div>
   </div>
 </section>
@@ -72,7 +76,7 @@
           </a>
           <div class="card-body pt-1">
             <p class="card-text">As we hold a number of events annually. you can help by becoming a member of our community who attends our events. By supporting us on these events we enhance our fundraising ability.</p>
-            <p>Check our <a href="#">latest events</a>.</p>
+            <p>Check our <a href="{% url 'events' %}">latest events</a>.</p>
           </div>
         </div>
       </div>

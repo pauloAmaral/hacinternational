@@ -38,8 +38,10 @@
       {% endif %}
     {% endfor%}
   {% else %}
-    <p class="lead">We are sorry, but at the moment we do not have any volunteering opportunites available.</p>
-    <p>Feel free to <a href="{% url 'contact_us' %}?subject=Spontaneous Volunteering">contact us</a> as we are always in need of good help.</p>
+    <div class="text-center">
+      <p class="lead">We are sorry, but at the moment we do not have any volunteering opportunities available.</p>
+      <p>Feel free to <a href="{% url 'contact_us' %}?subject=Spontaneous Volunteering">contact us</a> as we are always in need of good help.</p>
+    </div>
   {% endif %}
 </section>
 {% endblock %}
