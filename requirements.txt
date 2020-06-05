@@ -4,24 +4,25 @@
 #
 #    pip-compile --output-file requirements.txt requirements.in
 #
-boto3==1.9.188
+boto3==1.9.188            # via -r requirements.in
 botocore==1.12.188        # via boto3, s3transfer
-django-ckeditor==5.7.0
-django-crispy-forms==1.7.2
+django-ckeditor==5.7.0    # via -r requirements.in
+django-crispy-forms==1.7.2  # via -r requirements.in
 django-js-asset==1.2.2    # via django-ckeditor
-django-pipeline==1.6.14
-django-sendgrid-v5==0.8.0
-django-storages==1.7.1
-django==2.1.7
+django-pipeline==1.6.14   # via -r requirements.in
+django-sendgrid-v5==0.8.0  # via -r requirements.in
+django-storages==1.7.1    # via -r requirements.in
+django==2.2.13            # via -r requirements.in, django-sendgrid-v5, django-storages
 docutils==0.14            # via botocore
 future==0.17.1            # via django-sendgrid-v5
 jmespath==0.9.4           # via boto3, botocore
-pillow==6.0.0
+pillow==6.0.0             # via -r requirements.in
 python-dateutil==2.8.0    # via botocore
 python-http-client==3.1.0  # via django-sendgrid-v5, sendgrid
 pytz==2018.9              # via django
 s3transfer==0.2.1         # via boto3
 sendgrid==6.0.4           # via django-sendgrid-v5
 six==1.12.0               # via python-dateutil
+sqlparse==0.3.1           # via django
 urllib3==1.25.3           # via botocore
-uwsgi==2.0.18
+uwsgi==2.0.18             # via -r requirements.in
